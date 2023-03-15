@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.pojo.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +53,11 @@ class UserServiceTest {
     void testTableLogicSelect() {
         List<User> userList = userService.list();
         System.out.println(userList);
+    }
+
+    @Test
+    void testPage() {
+//        Page<User> page = new Page<>(1,3);
+
     }
 }
