@@ -1,8 +1,5 @@
-
-
 #mybatis plus 设置
 mybatis-plus:
-  mapper-locations: classpath*:com/c8software/modules/**/xml/*Mapper.xml
   global-config:
     # 关闭MP3.0自带的banner
     banner: false
@@ -16,9 +13,7 @@ mybatis-plus:
     #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     # 返回类型为Map,显示null对应的字段
     call-setters-on-nulls: true
-  logging:
-    level:
-      com.c8software.modules.system.mapper: info
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 spring:
   datasource:
