@@ -1,5 +1,6 @@
 package com.example.demo.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,4 +27,7 @@ public class User {
     private Integer age;
 
     private String email;
+
+    @TableLogic
+    private Integer isDeleted;
 }

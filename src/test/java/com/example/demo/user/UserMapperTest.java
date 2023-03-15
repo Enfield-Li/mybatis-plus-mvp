@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,6 +32,15 @@ class UserMapperTest {
     void testSelectList() {
         List<User> users = userMapper.selectList(null);
         System.out.println(users);
+    }
+
+
+    @Test
+    void testTableLogic() {
+        int deleted = userMapper.deleteBatchIds(Arrays.asList(1635974306502017032L, 1635974306502017031L));
+        System.out.println(deleted);
+
+
     }
 
 }
