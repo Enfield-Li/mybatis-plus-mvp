@@ -1,5 +1,7 @@
 package com.example.demo.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.pojo.User;
@@ -9,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -71,7 +75,7 @@ class UserMapperTest {
 
     @Test
     void testPage() {
-        Page<User> page = new Page<>(1,3);
+        Page<User> page = new Page<>(1, 3);
         Page<User> userPage = userMapper.selectPage(page, null);
         System.out.println(userPage.getRecords());
         System.out.println(userPage.getSize());
