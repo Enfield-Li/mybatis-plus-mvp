@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.pojo.User;
 import org.junit.jupiter.api.Test;
@@ -57,7 +59,15 @@ class UserServiceTest {
 
     @Test
     void testPage() {
-//        Page<User> page = new Page<>(1,3);
+        LambdaQueryWrapper<User> lambdaQueryWrapper = new QueryWrapper<User>().lambda();
+        lambdaQueryWrapper.like(User::getName, "user");
+
+        Page<User> page = new Page<>(2, 2);
+
+        Page<User> userPage = userService.page(page, null);
+        System.out.println(userPage.getRecords());
+        System.out.println(userPage.hasNext());
+        System.out.println(userPage.hasPrevious());
 
     }
 }
